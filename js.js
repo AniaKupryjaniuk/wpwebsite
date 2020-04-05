@@ -1,20 +1,21 @@
-fetch("http://kuprdesign.com/t8/wp-json/wp/v2/posts")
+fetch("http://kuprdesign.com/t8/wp-json/wp/v2/item")
     .then(res => res.json())
     .then(handleData)
 
-function handleData(posts) {
-    posts.forEach(showPost)
+function handleData(items) {
+    items.forEach(showItem)
 }
 
-function showPost(post) {
-    console.log(post)
+function showItem(item) {
+    console.log(item)
     const template =
         document.querySelector("template").content;
 
     const copy = template.cloneNode(true);
 
-    copy.querySelector("h2").textContent = post.title.rendered;
-    copy.querySelector(".body").innerHTML = post.content.rendered;
+    copy.querySelector("h2").textContent = item.title.rendered;
+    copy.querySelector("img").src = item.image.guid;
+    copy.querySelector(".price span").textContent = item.price;
 
     document.querySelector("main").appendChild(copy);
 

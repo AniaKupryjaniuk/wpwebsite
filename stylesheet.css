@@ -7,6 +7,20 @@ body,html {
     margin: 0;
 
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+main {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+article {
+  border:1px solid #ccc;
+  padding: 1rem;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
 #wrapper {
     margin: 1rem;
     display: grid;
@@ -19,14 +33,15 @@ header h1 {
     height: 80px;
     text-indent: -9999px;
 }
-.discography main {
+.store main {
     grid-column: 1/-1;
 }
 
+/*responsivness*/
 @media only screen and (min-width: 1000px){
     header {
         grid-column: 1/-1;
     }
-    .discography main {
+    .store main {
     grid-column: 2/-1;
 }
