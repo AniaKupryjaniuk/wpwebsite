@@ -1,47 +1,121 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body,html {
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F2F2;
     padding: 0;
     margin: 0;
-
 }
+
+h1 {}
+
 img {
     max-width: 100%;
     height: auto;
 }
-main {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:1rem;
+
+header {
+
+    background-color: #96F7E3;
+    position: relative;
 }
+
+h1 {
+    margin-top:0;
+    padding-top: 10px;
+    margin-left: 35%;
+}
+h2 {
+    margin: 0;
+    margin-left: 35%;
+}
+
+.navbar {
+    width: 100%;
+    margin-left: 12%;
+    overflow: auto;
+}
+
+.navbar a {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #8ECEAB;
+    float: left;
+    padding: 12px;
+    color: dimgrey;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #8ECEAB;
+}
+
+.navbar a.active {
+    background-color: #8ECEAB;
+}
+
 article {
-  border:1px solid #ccc;
-  padding: 1rem;
-  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
-#wrapper {
-    margin: 1rem;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-}
-header h1 {
-    background-image: url(images/logo.png);
-    background-repeat: no-repeat;
-    width: 180px;
-    height: 80px;
-    text-indent: -9999px;
-}
+
 .store main {
+     margin-top: 3%;
     grid-column: 1/-1;
+}
+.price {
+    display: block;
+    margin: 0;
+    padding: 7px;
+    background-color: #8ECEAB;
+}
+.btn {
+    display: block;
+    margin-left: auto;
+    padding: 8px;
+    background-color: #F2F2F2;
+    border: 2px solid #8ECEAB;
+
+}
+.box {
+    display: flex;
+
+}
+.categories {
+    margin-top: 2%;
+    margin-left: 20%;
+    overflow: auto;
+
+}
+.categories a {
+        text-decoration: none;
+    color: dimgrey;
+    padding: 15px;
+
 }
 
 /*responsivness*/
-@media only screen and (min-width: 1000px){
-    header {
-        grid-column: 1/-1;
+@media only screen and (min-width: 800px) {
+    main {
+        margin-left: 20%;
+        margin-right: 20%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
     }
-    .store main {
-    grid-column: 2/-1;
-}
+
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+    }
